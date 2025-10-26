@@ -240,6 +240,7 @@ async def main():
         print("Closing database connection...")
         await db.close()
 
+
 async def batch_insert_worker(queue: asyncio.Queue, db: DuckDBDatabase):
     """Batch insert transactions every 5 seconds or every 100 txs."""
     batch = []
@@ -268,6 +269,7 @@ async def batch_insert_worker(queue: asyncio.Queue, db: DuckDBDatabase):
                 last_insert_time = asyncio.get_event_loop().time()
         except Exception as e:
             print(f"Error in batch inserter: {e}")
+
 
 if __name__ == "__main__":
     print("Starting PumpStream indexer...")
