@@ -1,4 +1,4 @@
-# index_pump_data.py
+# pip install requests websockets solders base58 asyncio duckdb
 import json
 import asyncio
 from time import sleep
